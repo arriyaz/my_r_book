@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My New R Book
+title: R for Bioinformatics
 author: Anisur Rahman Riyaz
 logo: r-logo.jpg
 
