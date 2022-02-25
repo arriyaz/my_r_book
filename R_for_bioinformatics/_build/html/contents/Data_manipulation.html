@@ -223,6 +223,11 @@ const thebe_selector_output = ".output, .cell_output"
      Sort a DataFrame
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reverse-sort">
+     Reverse Sort
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -258,6 +263,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sort-a-dataframe">
      Sort a DataFrame
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reverse-sort">
+     Reverse Sort
     </a>
    </li>
   </ul>
@@ -313,6 +323,50 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="nf">arrange</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>Code Explanation</strong>: Here,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">order()</span></code> function can be used inside dataframe. In the above code we rearraged the rows based on the value of weight column.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">arrange()</span></code> function first give the name of the dataframe, and then the column name which you want to sort.</p></li>
+</ul>
+<p>We can sort more than one column one after another.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort by size, then by weight</span>
+
+<span class="n">df</span><span class="p">[</span> <span class="nf">order</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">size</span><span class="p">,</span> <span class="n">df</span><span class="o">$</span><span class="n">weight</span><span class="p">),</span> <span class="p">]</span>  <span class="c1"># Use built-in R functions</span>
+
+<span class="nf">arrange</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>         <span class="c1"># Use arrange from plyr package</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reverse-sort">
+<h3>Reverse Sort<a class="headerlink" href="#reverse-sort" title="Permalink to this headline">¶</a></h3>
+<p>The overall order of the sort can be reversed with the argument <code class="docutils literal notranslate"><span class="pre">decreasing=TRUE</span></code>.</p>
+<p>To reverse the direction of a particular column, the method depends on the data type:</p>
+<ul class="simple">
+<li><p><strong>Numbers</strong>: put a <code class="docutils literal notranslate"><span class="pre">-</span></code> in front of the variable name, e.g. <code class="docutils literal notranslate"><span class="pre">df[</span> <span class="pre">order(-df$weight),</span> <span class="pre">]</span></code>.</p></li>
+<li><p><strong>Factors</strong>: convert to integer and put a <code class="docutils literal notranslate"><span class="pre">-</span></code> in front of the variable name, e.g. <code class="docutils literal notranslate"><span class="pre">df[</span> <span class="pre">order(-xtfrm(df$size)),</span> <span class="pre">]</span></code>.</p></li>
+<li><p><strong>Characters</strong>: there isn’t a simple way to do this. One method is to convert to a factor first and then sort as above.</p></li>
+</ul>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reverse sort by weight column. These all have the same effect:</span>
+<span class="nf">arrange</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="o">-</span><span class="n">weight</span><span class="p">)</span>                      <span class="c1"># Use arrange from plyr package</span>
+<span class="n">df</span><span class="p">[</span> <span class="nf">order</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">weight</span><span class="p">,</span> <span class="n">decreasing</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">),</span> <span class="p">]</span>  <span class="c1"># Use built-in R functions</span>
+<span class="n">df</span><span class="p">[</span> <span class="nf">order</span><span class="p">(</span><span class="o">-</span><span class="n">df</span><span class="o">$</span><span class="n">weight</span><span class="p">),</span> <span class="p">]</span>                  <span class="c1"># Use built-in R functions</span>
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort by size (increasing), then by weight (decreasing)</span>
+<span class="nf">arrange</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="o">-</span><span class="n">weight</span><span class="p">)</span>         <span class="c1"># Use arrange from plyr package</span>
+<span class="n">df</span><span class="p">[</span> <span class="nf">order</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">size</span><span class="p">,</span> <span class="o">-</span><span class="n">df</span><span class="o">$</span><span class="n">weight</span><span class="p">),</span> <span class="p">]</span>  <span class="c1"># Use built-in R functions</span>
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort by size (decreasing), then by weight (increasing)</span>
+<span class="c1"># The call to xtfrm() is needed for factors</span>
+<span class="nf">arrange</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="o">-</span><span class="nf">xtfrm</span><span class="p">(</span><span class="n">size</span><span class="p">),</span> <span class="n">weight</span><span class="p">)</span>         <span class="c1"># Use arrange from plyr package</span>
+<span class="n">df</span><span class="p">[</span> <span class="nf">order</span><span class="p">(</span><span class="o">-</span><span class="nf">xtfrm</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">size</span><span class="p">),</span> <span class="n">df</span><span class="o">$</span><span class="n">weight</span><span class="p">),</span> <span class="p">]</span>  <span class="c1"># Use built-in R functions</span>
+</pre></div>
+</div>
+<p>Here,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">xtfrm()</span></code> function gives a numeric value for each text element of a vector and produces a numeric vector.</p></li>
+</ul>
 </div>
 </div>
 </div>

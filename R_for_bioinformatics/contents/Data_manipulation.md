@@ -45,8 +45,50 @@ df[order(df$weight), ]
 library(plyr)
 arrange(df, weight)
 ```
-  
+**Code Explanation**: Here,
+- `order()` function can be used inside dataframe. In the above code we rearraged the rows based on the value of weight column.
+- In the `arrange()` function first give the name of the dataframe, and then the column name which you want to sort.
+ 
+We can sort more than one column one after another.
+```R
+# Sort by size, then by weight
 
+df[ order(df$size, df$weight), ]  # Use built-in R functions
+
+arrange(df, size, weight)         # Use arrange from plyr package
+```
+
+### Reverse Sort
+The overall order of the sort can be reversed with the argument `decreasing=TRUE`.
+
+To reverse the direction of a particular column, the method depends on the data type:
+
+- **Numbers**: put a `-` in front of the variable name, e.g. `df[ order(-df$weight), ]`.
+- **Factors**: convert to integer and put a `-` in front of the variable name, e.g. `df[ order(-xtfrm(df$size)), ]`.
+
+- **Characters**: there isn’t a simple way to do this. One method is to convert to a factor first and then sort as above.
+
+```R
+# Reverse sort by weight column. These all have the same effect:
+arrange(df, -weight)                      # Use arrange from plyr package
+df[ order(df$weight, decreasing=TRUE), ]  # Use built-in R functions
+df[ order(-df$weight), ]                  # Use built-in R functions
+```
+
+```R
+# Sort by size (increasing), then by weight (decreasing)
+arrange(df, size, -weight)         # Use arrange from plyr package
+df[ order(df$size, -df$weight), ]  # Use built-in R functions
+```
+```R
+# Sort by size (decreasing), then by weight (increasing)
+# The call to xtfrm() is needed for factors
+arrange(df, -xtfrm(size), weight)         # Use arrange from plyr package
+df[ order(-xtfrm(df$size), df$weight), ]  # Use built-in R functions
+```
+Here,
+
+- `xtfrm()` function gives a numeric value for each text element of a vector and produces a numeric vector.
 
 
 
