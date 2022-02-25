@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dataframe Manipulation &#8212; R for Bioinformatics</title>
+    <title>This is the title of my new content &#8212; R for Bioinformatics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,8 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
-    <link rel="prev" title="Welcome to R for Bioinformatics Book" href="intro.html" />
+    <link rel="prev" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,8 +95,8 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Data_manipulation.html">
    Dataframe Manipulation
   </a>
  </li>
@@ -116,8 +115,8 @@ const thebe_selector_output = ".output, .cell_output"
    Notebooks with MyST Markdown
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="mymarkdownfile.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    This is the title of my new content
   </a>
  </li>
@@ -162,7 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/contents/Data_manipulation.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/contents/mymarkdownfile.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -182,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontents/Data_manipulation.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontents/mymarkdownfile.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -209,21 +208,19 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sorting">
-   Sorting
+  <a class="reference internal nav-link" href="#here-s-my-first-section">
+   Here’s my first section
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sort-a-vector">
-     Sort a vector
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sort-a-dataframe">
-     Sort a DataFrame
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframe-in-r">
+   Dataframe in R
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manipulation-of-datafrme">
+   Manipulation of datafrme
+  </a>
  </li>
 </ul>
 
@@ -235,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Dataframe Manipulation</h1>
+                <h1>This is the title of my new content</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -246,21 +243,19 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sorting">
-   Sorting
+  <a class="reference internal nav-link" href="#here-s-my-first-section">
+   Here’s my first section
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sort-a-vector">
-     Sort a vector
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sort-a-dataframe">
-     Sort a DataFrame
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframe-in-r">
+   Dataframe in R
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manipulation-of-datafrme">
+   Manipulation of datafrme
+  </a>
  </li>
 </ul>
 
@@ -271,49 +266,20 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="dataframe-manipulation">
-<h1>Dataframe Manipulation<a class="headerlink" href="#dataframe-manipulation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="sorting">
-<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="sort-a-vector">
-<h3>Sort a vector<a class="headerlink" href="#sort-a-vector" title="Permalink to this headline">¶</a></h3>
-<p>Let’s create a vector and sort it by <code class="docutils literal notranslate"><span class="pre">sort()</span></code> function.</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make up a randomly ordered vector</span>
-<span class="n">v</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="m">101</span><span class="o">:</span><span class="m">110</span><span class="p">)</span>
-
-<span class="c1"># Sort the vector</span>
-<span class="nf">sort</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-
-<span class="c1"># Reverse sort</span>
-<span class="nf">sort</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">decreasing</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-</pre></div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="this-is-the-title-of-my-new-content">
+<h1>This is the title of my new content<a class="headerlink" href="#this-is-the-title-of-my-new-content" title="Permalink to this headline">¶</a></h1>
+<p>I will add R codes in this file</p>
+<div class="section" id="here-s-my-first-section">
+<span id="section-label"></span><h2>Here’s my first section<a class="headerlink" href="#here-s-my-first-section" title="Permalink to this headline">¶</a></h2>
+<p>Here is a <a class="reference internal" href="intro.html"><span class="doc std std-doc">reference to the intro</span></a>. Here is a reference to <a class="reference internal" href="#section-label"><span class="std std-ref">Here’s my first section</span></a>.</p>
 </div>
-<p><strong>Code Explanation</strong>: Here,</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sample()</span></code> takes a sample of the specified size from the elements of object using either with or without replacement. For example, in the above code, sample takes value in between 101 to 110, but in random order, without replacement.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sort()</span></code> fuction order them from smaller to larger</p></li>
-<li><p>To order the vector from larger to smaller, we can use decreasing=TRUE option in <code class="docutils literal notranslate"><span class="pre">sort()</span></code> function.</p></li>
-</ul>
+<div class="section" id="dataframe-in-r">
+<span id="dataframe-label"></span><h2>Dataframe in R<a class="headerlink" href="#dataframe-in-r" title="Permalink to this headline">¶</a></h2>
+<p>In this section I will like to discuss about dataframe in R. After learning about <a class="reference internal" href="markdown-notebooks.html"><span class="doc std std-doc">Myst markdown</span></a>, you will be able to learn more about writing good gitbook.</p>
 </div>
-<div class="section" id="sort-a-dataframe">
-<h3>Sort a DataFrame<a class="headerlink" href="#sort-a-dataframe" title="Permalink to this headline">¶</a></h3>
-<p>Firs, let’s create a dataframe</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame </span><span class="p">(</span><span class="n">id</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span>
-            <span class="n">weight</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span><span class="m">27</span><span class="p">,</span><span class="m">24</span><span class="p">,</span><span class="m">22</span><span class="p">),</span>
-            <span class="n">size</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;small&quot;</span><span class="p">,</span> <span class="s">&quot;large&quot;</span><span class="p">,</span> <span class="s">&quot;medium&quot;</span><span class="p">,</span> <span class="s">&quot;large&quot;</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>Now to sort the rows of this dataframe we can either use a built in function or <code class="docutils literal notranslate"><span class="pre">arrange()</span></code> function from <code class="docutils literal notranslate"><span class="pre">plyr</span></code> package.</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort by weight column. These have the same result.</span>
-<span class="c1"># Use built-in R functions</span>
-<span class="n">df</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">weight</span><span class="p">),</span> <span class="p">]</span> 
-
-<span class="c1"># Use arrange from plyr package</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">plyr</span><span class="p">)</span>
-<span class="nf">arrange</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="manipulation-of-datafrme">
+<h2>Manipulation of datafrme<a class="headerlink" href="#manipulation-of-datafrme" title="Permalink to this headline">¶</a></h2>
+<p>So now your learn many things about dataframe from <a class="reference internal" href="#dataframe-label"><span class="std std-ref">dataframe</span></a> section. Now all you need to know about manipuling this dataframe.</p>
 </div>
 </div>
 
@@ -342,19 +308,12 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="markdown-notebooks.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to R for Bioinformatics Book</p>
+            <p class="prev-next-title">Notebooks with MyST Markdown</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="markdown.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Markdown Files</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
