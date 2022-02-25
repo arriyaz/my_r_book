@@ -4,6 +4,7 @@
 format: jb-book
 root: intro
 chapters:
+- file: contents/Data_manipulation
 - file: markdown
 - file: notebooks
 - file: markdown-notebooks
