@@ -24,3 +24,46 @@ sort(v, decreasing=TRUE)
 - `sort()` fuction order them from smaller to larger
 
 - To order the vector from larger to smaller, we can use decreasing=TRUE option in `sort()` function.
+
+
+### Sort a DataFrame
+Firs, let's create a dataframe
+
+```R
+df <- data.frame (id=1:4,
+            weight=c(20,27,24,22),
+            size=c("small", "large", "medium", "large"))
+```
+Now to sort the rows of this dataframe we can either use a built in function or `arrange()` function from `plyr` package.
+
+```R
+# Sort by weight column. These have the same result.
+# Use built-in R functions
+df[order(df$weight), ] 
+
+# Use arrange from plyr package
+library(plyr)
+arrange(df, weight)
+```
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
